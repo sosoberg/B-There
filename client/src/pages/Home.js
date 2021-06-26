@@ -2,9 +2,15 @@ import React from "react";
 
 function Home() {
   return (
-    <div>
+    <>
         <h1>Home</h1>
-    </div>
+        <section>
+            <h2>Top Posts</h2>
+        </section>
+        <aside>
+            <h2>Events</h2>
+        </aside>
+    </>
   );
 }
 
