@@ -22,7 +22,7 @@ function App() {
                     <Route exact path='/login' component={ Login } />
                 </Switch>
             </div>
-        </Router>
+      </Router>
   );
 }
 
