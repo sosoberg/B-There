@@ -1,0 +1,31 @@
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    45% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    95% {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+.headH1 {
+    padding: 50px 50px 30px 30px;
+    animation: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+}
+
+.B {
+    font-size: 100px;
+    border: 2px solid;
+    padding: 0px 5px 0px 5px;
+    
+}
