@@ -6,7 +6,8 @@ const eventSchema = new Schema({
   location: { type: String, required: true },
   description: {String},
   image: {type: Image},
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  event: Boolean
 });
 
 const Event = mongoose.model("Event", Schema);
