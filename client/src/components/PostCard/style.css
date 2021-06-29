@@ -1,0 +1,6 @@
+.post-card {
+    min-width: 300px;
+    width: 300px;
+    margin: 10px;
+    border: 5px solid #008CBA;
+}
