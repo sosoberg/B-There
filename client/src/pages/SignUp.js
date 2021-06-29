@@ -3,11 +3,11 @@ import {Form,Button,Container} from 'react-bootstrap';
 import './style.css';
 import {Link} from 'react-router-dom';
 
-const Login = () => {
+const SignUp = () => {
     return (
        <div className='form-container'>
        <Form className='login-form'>
-           <h1>Login</h1>
+           <h1>Sign Up</h1>
   <Form.Group className='mb-4' controlId="formBasicEmail">
     <Form.Label>Name</Form.Label>
     <Form.Control type='text' placeholder='Enter Name' />
@@ -21,13 +21,17 @@ const Login = () => {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" />
   </Form.Group>
-  <Button className='mb-4' variant="secondary" type="submit">
+  <Form.Group className='mb-4' controlId="formBasicPassword">
+    <Form.Label>Confirm Password</Form.Label>
+    <Form.Control type="password" placeholder="Confirm Password" />
+  </Form.Group>
+  <Button variant="secondary" type="submit">
     Submit
   </Button>
-  <p>Not yet registered? <Link to= '/signup'>Sign up here</Link></p>
+  <p>Already have an account? <Link to= '/login'>Login</Link></p>
 </Form>
 </div>
     )
 }
 
-export default Login
+export default SignUp

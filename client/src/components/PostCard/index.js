@@ -1,14 +1,20 @@
 import React from "react";
 import './style.css'
+import {Card} from 'react-bootstrap';
 
 function PostCard(props) {
 
     return (
-        <div>
-            <h2>{props.username}</h2>
-            <img src={props.image} alt="projectImg"/>
-            <p>{props.description}</p>
-        </div>
+        <Card className='post-card'>
+        <Card.Img variant="top" src={props.imgurl} />
+        <Card.Body>
+          <Card.Title>{props.userName}</Card.Title>
+          <Card.Text>
+            {props.description}
+          </Card.Text>
+          {/* can add button or like tab here */}
+        </Card.Body>
+      </Card>
     );
 };
 
