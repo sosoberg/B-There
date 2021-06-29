@@ -1,5 +1,28 @@
 /* Map */
+.app {
+    background-color:  rgb(234, 238, 175);
+}
 iframe {
     width: 100%;
     height: 650px;
+}
+.login-form {
+    width: 60%;
+
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.top-posts {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.top-post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
