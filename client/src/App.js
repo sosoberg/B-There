@@ -8,13 +8,16 @@ import SignUp from './pages/SignUp';
 import { Container } from "react-bootstrap";
 
 //components
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import Header from "./components/Header";
-
+import Title from "./components/Title";
 
 function App() {
   return (
       <Router>
+            <div>
+            <Title />
+            </div>
             <div className='app'>
                 <Header />
                 <Container>
