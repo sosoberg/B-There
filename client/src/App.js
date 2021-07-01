@@ -5,7 +5,7 @@ import Profile from "./pages/Profile";
 import Map from "./pages/Map";
 import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 
 //components
 // import Nav from "./components/Nav";
@@ -20,7 +20,7 @@ function App() {
             </div>
             <div className='app'>
                 <Header />
-                <Container>
+                {/* <Container> */}
                 {/* <Nav /> */}
                 <Switch>
                     <Route exact path='/' component={ Home } />
@@ -29,7 +29,7 @@ function App() {
                     <Route exact path='/login' component={ Login } />
                     <Route exact path='/signup' component={ SignUp } />
                 </Switch>
-                </Container>
+                {/* </Container> */}
             </div>
       </Router>
   );
