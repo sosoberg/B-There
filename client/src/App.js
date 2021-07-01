@@ -16,7 +16,7 @@ function App() {
   return (
       <Router>
             <div>
-            <Title />
+                <Title />
             </div>
             <div className='app'>
                 <Header />

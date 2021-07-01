@@ -1,7 +1,7 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
+// const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +21,6 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/seattleLocationDB");
 
 // Send every other request to the React app
-
 
 // Define any API routes before this runs
 app.get("*", (req, res) => {
