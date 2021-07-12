@@ -1,11 +1,17 @@
-import React from "react";
+import React , {Component}from "react";
 import PostCard from "../components/PostCard";
 import posts from '../postdata';
 import './style.css';
 
-function Home() {
-  return (
-    <>
+export default class Home extends Component {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    return (
+      <>
         <h1>Home</h1>
         <div className='homeGrid'>
           <section>
@@ -26,5 +32,4 @@ function Home() {
     </>
   );
 }
-
-export default Home;
+}
