@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Container } from 'react-bootstrap';
+
 // pages
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
@@ -82,16 +82,16 @@ export default class App extends Component {
                 </div>
                 <div className='app'>
                     <Header handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>
-                    <Container>
+                    {/* <Container> */}
                         {/* <Nav /> */}
                         <Switch>
                             <Route exact path='/' render = {props => (<Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
                             <Route exact path='/profile' render = {props => (<Profile {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>)} />
-                            <Route exact path='/map' component={Map} />
+                            <Route exact path='/maps' component={Map} />
                             <Route exact path='/login' render = {props => (<Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
                             <Route exact path='/signup' render = {props => (<SignUp {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
                         </Switch>
-                    </Container>
+                    {/* </Container> */}
                 </div>
             </Router>
         );

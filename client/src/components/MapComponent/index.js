@@ -8,7 +8,7 @@ class MapComponent extends Component {
   static defaultProps = {
     center: {
       lat: 47.60,
-      lng: -122.33
+      lng: -125.50
     },
     zoom: 13
   };
@@ -19,7 +19,7 @@ class MapComponent extends Component {
       <div id="map">
         <div>
         </div>
-        <div style={{ height: '71vh', width: '100%' }}>
+        <div style={{ height: '76vh', width: '100%' }}>
             <GoogleMapReact
             bootstrapURLKeys={{ key: `AIzaSyCUXkG-5a5cdEyPP2Ki6sg-0Ckc9qz06W8` }}
             defaultCenter={this.props.center}
