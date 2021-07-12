@@ -1,33 +1,24 @@
-import React from 'react'
-import { Form, Button } from 'react-bootstrap';
+import React, { Component } from 'react';
 import './style.css';
-import {Link} from 'react-router-dom';
+import Loginform from '../components/Signin';
 
-const Login = () => {
+export default class Login extends Component {
+  constructor(props){
+    super(props);
+
+    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+  }
+
+  handleSuccessfulAuth(data){
+    this.props.handleLogin(data)
+    this.props.history.push("/profile");
+  }
+
+  render() {
     return (
-       <div className='form-container'>
-       <Form className='login-form'>
-            <h1>Login</h1>
-            <Form.Group className='mb-4' controlId="formBasicEmail">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type='text' placeholder='Enter Name' />
-            </Form.Group>
-            <Form.Group className='mb-4' controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-
-            <Form.Group className='mb-4' controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Button className='mb-4' variant="secondary" type="submit">
-              Submit
-            </Button>
-            <p>Not yet registered? <Link to= '/signup'>Sign up here</Link></p>
-          </Form>
-        </div>
+      <div className='form-container'>
+        <Loginform handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+      </div>
     )
+  }
 }
-
-export default Login

@@ -12,7 +12,7 @@ const UserSchema = new userSchema({
         autoIncrement: true,
       },
 
-      name: {
+      username: {
         type: String,
         allowNull: false,
       },
@@ -39,8 +39,9 @@ UserSchema.methods = {
 }
 
 UserSchema.pre('save', function (next) {
+  console.log(this.email)
   if (!this.password) {
-    console.log('NO PASSWORD')
+    console.log('NO PASSWORD',this.password)
     next()
   } else {
     console.log('save');
