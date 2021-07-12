@@ -5,10 +5,8 @@ import Profile from "./pages/Profile";
 import Map from "./pages/Map";
 import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
-// import { Container } from "react-bootstrap";
 
 //components
-// import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Title from "./components/Title";
 
@@ -25,7 +23,7 @@ function App() {
                 <Switch>
                     <Route exact path='/' component={ Home } />
                     <Route exact path='/profile' component={ Profile } />
-                    <Route exact path='/map' component={ Map } />
+                    <Route exact path='/maps' component={ Map } />
                     <Route exact path='/login' component={ Login } />
                     <Route exact path='/signup' component={ SignUp } />
                 </Switch>
