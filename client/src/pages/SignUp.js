@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import './style.css';
 import Signupform from '../components/Signup';
-// import axios from "axios";
 
 export default class SignUp extends Component {
 

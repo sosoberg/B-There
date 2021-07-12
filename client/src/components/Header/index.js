@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import './style.css';
 import { Navbar, Nav } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import axios from "axios";
 

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 // pages
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Map from "./pages/Map";
 import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
-import { Container } from "react-bootstrap";
 
 // import API from "./utils/API";
 //components
-// import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Title from "./components/Title";
 // import { response } from 'express';
