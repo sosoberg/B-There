@@ -16,11 +16,21 @@
     }
 }
 
+.titleDiv {
+    width: 100%;
+    position: fixed;        
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+    z-index: 1;
+}
+
 .headH1 {
     padding: 50px 50px 30px 30px;
     animation: rotate;
     animation-duration: 60s;
     animation-iteration-count: infinite;
+
 }
 
 .B {
