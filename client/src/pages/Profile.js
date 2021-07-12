@@ -3,6 +3,8 @@ import axios from "axios";
 import posts from '../postdata';
 import PostCard from "../components/PostCard";
 
+import './style.css'
+
 export default class Profile extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -77,28 +79,12 @@ export default class Profile extends Component {
         }
       }
 
-      // const findUploadImage = async() =>{
-      //   try {
-      //     await axios.get('http://localhost:3001/api/posts',
-      //       {
-      //         userId: this.state.user_ID,
-      //         Image64: base64EncodedImage
-      //       },
-      //       { withCredentials: true })
-      //       .then(response => {
-      //         console.log(response)
-      //       })
-      //   } catch (error) {
-      //     console.log("error", error)
-      //   }
-      // }
-
       return (
         <div>
-          <h1>Welcome: {this.state.username}</h1>
+          <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
           <h2>Status: {this.props.loggedInStatus}</h2>
-          <h3>test</h3>
-          <form onSubmit={handleSubmitFile}>
+
+          <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
             <input type="file" name="image" value={this.state.fileInputState} onChange={handleFileInputChange} />
             <button type="submit" className="btn btn-primary">submit</button>
           </form>
@@ -106,7 +92,7 @@ export default class Profile extends Component {
           {this.state.previewSource && (
             <img src={this.state.previewSource} alt="chose" style={{ height: '300px' }} />
           )}
-          <div className='top-posts'>
+          <div>
           {posts.map((post) => {
               return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description} />
             })}
