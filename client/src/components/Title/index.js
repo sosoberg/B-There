@@ -3,9 +3,9 @@ import './style.css';
 
 const Title = () => {
     return (
-        <>
+        <div className="titleDiv">
             <h1 className="headH1"><span className="B">B</span><span> there!</span></h1>
-        </>
+        </div>
     )
 }
 

@@ -1,0 +1,6 @@
+.navDiv {
+    width: 100%;
+    position: fixed;
+    top: 200px;
+    z-index: 1;
+}
