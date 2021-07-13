@@ -18,7 +18,9 @@
 
 .titleDiv {
     width: 100%;
-    position: fixed;        
+    position: fixed;      
+    right: auto;
+    top: 0px;  
     background: #333;
     padding: 10px 0;
     color: #fff;
@@ -38,4 +40,15 @@
     border: 2px solid;
     padding: 0px 5px 0px 5px;
     
+}
+
+
+@media only screen and (max-width: 250px) {
+    
+    .there {
+        position: fixed;
+        transform: rotate(-90deg);
+        top: 100px;
+    }
+
 }

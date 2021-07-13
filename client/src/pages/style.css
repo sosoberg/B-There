@@ -19,14 +19,21 @@ iframe {
 
 /* Profile */
 
-.stateUserName {
+.imageSubmit {
     position: fixed;
-    top: 270px;
+    top: 250px;
+    background-color: black;
+    width: 100%;
+    border: 5px white solid;
+    height: 175px;
+    color: white;
+    z-index: 1;
 }
 
-.pictureSubmitForm {
-    position: fixed;
-    top: 320px;
+.profileCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 235px;
 }
 
 /* Home */
@@ -62,6 +69,12 @@ iframe {
     height: 60%;
 }
 
+@media only screen and (max-width: 1620px) {
+    .profileCard {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
 @media only screen and (max-width: 1550px) {
     .top-posts {
         grid-template-columns: 1fr 1fr;
@@ -74,6 +87,12 @@ iframe {
 @media only screen and (max-width: 1350px) {
     .eventAside {
         width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .profileCard {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -92,6 +111,12 @@ iframe {
     }
 }
 
+@media only screen and (max-width: 980px) {
+    .profileCard {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media only screen and (max-width: 950px) {
     .homeGrid {
         grid-template-columns: 1fr;
@@ -107,3 +132,12 @@ iframe {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+@media only screen and (max-width: 660px) {
+    .profileCard {
+        grid-template-columns: 1fr;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
