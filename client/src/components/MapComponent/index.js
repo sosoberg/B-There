@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import './style.css'
 
-const AnyReactComponent = ({ text }) => <div className="markerDiv"><img src="./images/star.png" alt="staricon"/>{text}</div>;
+const AnyReactComponent = ({ text, marker }) => <div className="markerDiv">{marker}<img src="./images/star.png" alt="staricon"/>{text}</div>;
 
 class MapComponent extends Component {
   static defaultProps = {
@@ -28,6 +28,7 @@ class MapComponent extends Component {
             <AnyReactComponent
                 lat={ 47.6062 }
                 lng={ -122.3321 }
+                marker="^"
                 text="Here"
             />
             </GoogleMapReact>

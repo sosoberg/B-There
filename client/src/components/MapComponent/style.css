@@ -8,6 +8,9 @@
   }
 
   .markerDiv {
+    margin: none;
+    border: none;
+    padding: solid 1px black;
     font-size: 25px;
     font-weight: bolder;
   }
