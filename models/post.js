@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
     userId: { type: String, required: true},
+    userName: { type: String, require: true },
     // location: { type: String, required: true },
     title: {type: String, required: true},
     description: { type: String, required: true},

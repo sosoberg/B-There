@@ -76,11 +76,12 @@ export default class Profile extends Component {
 
       const uploadImage = async (base64EncodedImage) => {
         // console.log(base64EncodedImage)
-        console.log(JSON.stringify({ Image64: base64EncodedImage }))
+        // console.log(JSON.stringify({ Image64: base64EncodedImage }))
         try {
           await axios.post('http://localhost:3001/api/posts',
             {
               userId: this.state.user_ID,
+              userName: this.state.username,
               title: this.state.titleInputState,
               description: this.state.descriptionState,
               Image64: base64EncodedImage,

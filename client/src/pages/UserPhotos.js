@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import axios from "axios";
-import posts from '../postdata';
+// import posts from '../postdata';
 import PostCard from "../components/PostCard";
 
 import './style.css'
@@ -16,6 +16,7 @@ export default class UserPhotos extends Component {
       fileInputState: "",
       previewSource: "",
       selectedFile: "",
+      posts: []
     }
   }
 
@@ -26,6 +27,11 @@ export default class UserPhotos extends Component {
         this.setState({
           user_ID: response.data.user._id,
           username: response.data.user.username,
+        })
+        axios.get(`http://localhost:3001/api/posts/photos/${response.data.user._id}`)
+        .then(response => {
+          console.log(response.data);
+          this.setState({ posts: response.data })
         })
       })
       .catch(error => {
@@ -43,8 +49,8 @@ export default class UserPhotos extends Component {
       return (
         <div>
           <div className='profileCard'>
-          {posts.map((post) => {
-              return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description} />
+          {this.state.posts.map((post) => {
+              return <PostCard title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} />
             })}
           </div>
         </div>
