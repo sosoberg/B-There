@@ -16,6 +16,11 @@
     }
 }
 
+/* to combay fixed position of title */
+.empty {
+    height: 255px;
+}
+
 .titleDiv {
     width: 100%;
     position: fixed;      
@@ -42,13 +47,16 @@
     
 }
 
+@media only screen and (max-width: 993px) {
+    .empty {
+        height: 228px;
+    }
+}
 
 @media only screen and (max-width: 250px) {
-    
     .there {
         position: fixed;
         transform: rotate(-90deg);
         top: 100px;
     }
-
 }
