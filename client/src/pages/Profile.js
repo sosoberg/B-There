@@ -12,6 +12,8 @@ export default class Profile extends Component {
       username: "",
       user_ID:"",
       fileInputState: "",
+      titleInputState:"",
+      descriptionState:"",
       previewSource: "",
       selectedFile: "",
     }
@@ -43,6 +45,18 @@ export default class Profile extends Component {
         previewFile(file)
       }
 
+      const handleTitleInputChange = (e) => {
+        this.setState({
+          titleInputState: e.target.value
+        })
+      }
+
+      const handleDesInputChange = (e) =>{
+        this.setState({
+          descriptionState: e.target.value
+        })
+      }
+
       const previewFile = (file) => {
         const reader = new FileReader();
         reader.readAsDataURL(file)
@@ -67,7 +81,9 @@ export default class Profile extends Component {
           await axios.post('http://localhost:3001/api/posts',
             {
               userId: this.state.user_ID,
-              Image64: base64EncodedImage
+              title: this.state.titleInputState,
+              description: this.state.descriptionState,
+              Image64: base64EncodedImage,
             },
             { withCredentials: true })
             .then(response => {
@@ -86,6 +102,10 @@ export default class Profile extends Component {
 
             <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
               <input type="file" name="image" value={this.state.fileInputState} onChange={handleFileInputChange} />
+              <label htmlFor="password">Title</label>
+              <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange}/>
+              <label htmlFor="password">Description</label>
+              <input type="text" name="description" value={this.state.descriptionState} onChange={handleDesInputChange}/>
               <button type="submit" className="btn btn-primary">submit</button>
             </form>
             <br />
