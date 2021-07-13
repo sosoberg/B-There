@@ -33,7 +33,6 @@ iframe {
 .profileCard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin-top: 235px;
 }
 
 /* Home */
@@ -46,7 +45,6 @@ iframe {
 }
 
 .top-posts {
-    margin-top: 200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
@@ -63,7 +61,6 @@ iframe {
 .eventAside {
     background-color: white;
     position: fixed;
-    top: 300px;
     right: 4vw;
     width: 30%;
     height: 60%;
@@ -128,7 +125,7 @@ iframe {
         top: 255px;
     }
     .top-posts {
-        margin-top: 700px;
+        margin-top: 320px;
         grid-template-columns: 1fr 1fr;
     }
 }
