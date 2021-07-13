@@ -30,10 +30,11 @@
     padding: 10px 0;
     color: #fff;
     z-index: 1;
+    background-image: url('./street3.jpg');
 }
 
 .headH1 {
-    padding: 50px 50px 30px 30px;
+    padding: 30px 50px 78px 30px;
     animation: rotate;
     animation-duration: 60s;
     animation-iteration-count: infinite;

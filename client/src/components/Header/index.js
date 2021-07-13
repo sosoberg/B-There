@@ -27,22 +27,22 @@ export default class Header extends Component {
         if (this.props.loggedInStatus === "NOT_LOGGED_IN") {
             return (
                 <div className='navDiv'>
-                    <Navbar bg='primary' variant='light' expand="lg">
+                    <Navbar expand="lg">
                         <Navbar.Brand className='menu'>Menu</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Navbar.Collapse>
                             <Nav className="ml-auto">
                                 <LinkContainer to='/'>
-                                    <Nav.Link>Home</Nav.Link>
+                                    <Nav.Link className='link'>Home</Nav.Link>
                                 </LinkContainer>
                                 {/* <LinkContainer to='/profile'>
                                     <Nav.Link>profile</Nav.Link>
                                 </LinkContainer> */}
                                 <LinkContainer to='/maps'>
-                                    <Nav.Link>Maps</Nav.Link>
+                                    <Nav.Link className='link'>Maps</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to='/login'>
-                                    <Nav.Link>Login</Nav.Link>
+                                    <Nav.Link className='link'>Login</Nav.Link>
                                 </LinkContainer>
 
                             </Nav>
@@ -53,27 +53,27 @@ export default class Header extends Component {
         } else if (this.props.loggedInStatus === "LOGGED_IN") {
             return (
                 <div className='navDiv'>
-                    <Navbar bg='primary' variant='light' expand="lg">
+                    <Navbar expand="lg">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Navbar.Collapse>
                             <Nav className="ml-auto">
                                 <LinkContainer to='/'>
-                                    <Nav.Link>Home</Nav.Link>
+                                    <Nav.Link className='link'>Home</Nav.Link>
                                 </LinkContainer>
                                 {/* <LinkContainer to='/login'>
                                     <Nav.Link>Login</Nav.Link>
                                 </LinkContainer> */}
                                 <LinkContainer to='/maps'>
-                                    <Nav.Link>Maps</Nav.Link>
+                                    <Nav.Link className='link'>Maps</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to='/profile'>
-                                    <Nav.Link>Profile</Nav.Link>
+                                    <Nav.Link className='link'>Profile</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to='/userphotos'>
-                                    <Nav.Link>My Photos</Nav.Link>
+                                    <Nav.Link className='link'>My Photos</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to='/'>
-                                    <Nav.Link onClick={() => this.handleLogoutClick()}> Logout</Nav.Link>
+                                    <Nav.Link  className='link' onClick={() => this.handleLogoutClick()}> Logout</Nav.Link>
                                 </LinkContainer>
                             </Nav>
                         </Navbar.Collapse>
