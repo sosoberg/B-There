@@ -2,7 +2,11 @@
     width: 100%;
     position: fixed;
     top: 200px;
-    z-index: 1;
+    z-index: 2;
+}
+
+.menu {
+    display: none;
 }
 
 @media only screen and (max-width: 991px) {
@@ -10,6 +14,11 @@
         right: 0px;
         width: 25%;
         border: 4px #333 solid;
+    }
+    .menu {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

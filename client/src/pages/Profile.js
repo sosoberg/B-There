@@ -1,7 +1,6 @@
 import React, { Component } from "react";
+
 import axios from "axios";
-import posts from '../postdata';
-import PostCard from "../components/PostCard";
 
 import './style.css'
 
@@ -81,21 +80,18 @@ export default class Profile extends Component {
 
       return (
         <div>
-          <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
-          <h2>Status: {this.props.loggedInStatus}</h2>
+          <div className='imageSubmit'>
+            <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
+            <h2>Status: {this.props.loggedInStatus}</h2>
 
-          <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
-            <input type="file" name="image" value={this.state.fileInputState} onChange={handleFileInputChange} />
-            <button type="submit" className="btn btn-primary">submit</button>
-          </form>
-          <br />
-          {this.state.previewSource && (
-            <img src={this.state.previewSource} alt="chose" style={{ height: '300px' }} />
-          )}
-          <div>
-          {posts.map((post) => {
-              return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description} />
-            })}
+            <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
+              <input type="file" name="image" value={this.state.fileInputState} onChange={handleFileInputChange} />
+              <button type="submit" className="btn btn-primary">submit</button>
+            </form>
+            <br />
+            {this.state.previewSource && (
+              <img src={this.state.previewSource} alt="chose" style={{ height: '300px' }} />
+            )}
           </div>
         </div>
       );
@@ -106,5 +102,5 @@ export default class Profile extends Component {
         </div>
       )
     }
-  }
+  } 
 }

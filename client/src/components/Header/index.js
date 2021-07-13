@@ -28,7 +28,7 @@ export default class Header extends Component {
             return (
                 <div className='navDiv'>
                     <Navbar bg='primary' variant='light' expand="lg">
-                        <Navbar.Brand href="#home">B There</Navbar.Brand>
+                        <Navbar.Brand className='menu'>Menu</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
@@ -67,7 +67,10 @@ export default class Header extends Component {
                                     <Nav.Link>Maps</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to='/profile'>
-                                    <Nav.Link>profile</Nav.Link>
+                                    <Nav.Link>Profile</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to='/userphotos'>
+                                    <Nav.Link>My Photos</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to='/'>
                                     <Nav.Link onClick={() => this.handleLogoutClick()}> Logout</Nav.Link>
