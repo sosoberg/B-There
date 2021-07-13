@@ -11,6 +11,7 @@ router
   .get(postsController.findById)
   .put(postsController.update)
   .delete(postsController.remove);
+  
 router.route("/photos/:userid")
   .get(postsController.findByUserId)
 

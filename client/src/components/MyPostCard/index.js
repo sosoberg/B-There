@@ -1,7 +1,17 @@
 import React from "react";
 import './style.css'
 import { Card } from 'react-bootstrap';
-// import { Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import axios from "axios"
+
+function handleDelete(e){
+    console.log(e.target.value)
+    axios.delete(`http://localhost:3001/api/posts/${e.target.value}`)
+        .then(response => {
+          console.log("Delete Success:",response);
+        })
+}
+
 
 function PostCard(props) {
 
@@ -14,7 +24,7 @@ function PostCard(props) {
           <Card.Text>
             {props.description}
           </Card.Text>
-          {/* <Button /> */}
+          <Button value={props.id} onClick={(e) => { handleDelete(e) }}/>
           {/* can add button or like tab here */}
         </Card.Body>
       </Card>
