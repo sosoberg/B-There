@@ -8,7 +8,8 @@ function PostCard(props) {
         <Card className='post-card'>
         <Card.Img variant="top" src={props.imgurl} />
         <Card.Body>
-          <Card.Title>{props.userName}</Card.Title>
+          <Card.Title style={{fontSize:'12px'}}>{props.userName}</Card.Title>
+          <Card.Title><strong>{props.title}</strong></Card.Title>
           <Card.Text>
             {props.description}
           </Card.Text>
