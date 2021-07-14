@@ -30,7 +30,6 @@ export default class UserPhotos extends Component {
         })
         axios.get(`http://localhost:3001/api/posts/photos/${response.data.user._id}`)
         .then(response => {
-          console.log(response.data);
           this.setState({ posts: response.data })
         })
       })

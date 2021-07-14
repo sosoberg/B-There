@@ -10,12 +10,14 @@ export default class Profile extends Component {
     super(props);
     this.state = {
       username: "",
-      user_ID:"",
+      user_ID: "",
       fileInputState: "",
-      titleInputState:"",
-      descriptionState:"",
+      titleInputState: "",
+      descriptionState: "",
       previewSource: "",
       selectedFile: "",
+      latitude: "",
+      longitude: "",
     }
   }
 
@@ -35,6 +37,17 @@ export default class Profile extends Component {
 
   componentDidMount() {
     this.getLoginStatus();
+    if (navigator.geolocation) {
+      console.log("Avaliable")
+      navigator.geolocation.getCurrentPosition(position => {
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        })
+      })
+    } else {
+      console.log("Not Avaliable")
+    }
   }
 
   render() {
@@ -42,9 +55,6 @@ export default class Profile extends Component {
 
       const handleFileInputChange = async (e) => {
         const file = e.target.files[0]
-        // this.setState({
-        //   fileInputState: file.name
-        // })
         previewFile(file)
       }
 
@@ -54,7 +64,7 @@ export default class Profile extends Component {
         })
       }
 
-      const handleDesInputChange = (e) =>{
+      const handleDesInputChange = (e) => {
         this.setState({
           descriptionState: e.target.value
         })
@@ -88,6 +98,7 @@ export default class Profile extends Component {
               title: this.state.titleInputState,
               description: this.state.descriptionState,
               Image64: base64EncodedImage,
+              likes: 0,
             },
             { withCredentials: true })
             .then(response => {
@@ -98,21 +109,34 @@ export default class Profile extends Component {
         }
       }
 
-      console.log(this.state)
-      
+      const checkForEvent = () => {
+        if (this.state.latitude === "" && this.state.longitude === "") {
+          return false
+        } else {
+          const distance = Math.sqrt((this.state.latitude - 47.6205063) ** 2 + (this.state.longitude - 122.3514661) ** 2)
+          console.log(distance)
+          if (distance < 150) {
+            return true
+          } else {
+            return false
+          }
+        }
+      }
+
       return (
         <div>
           <div className='imageSubmit'>
             <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
             <h2>Status: {this.props.loggedInStatus}</h2>
-
+            {console.log(this.state)}
             <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
-              <input type="file" name="image" onChange={handleFileInputChange}/>
+              <input type="file" name="image" onChange={handleFileInputChange} />
               <label htmlFor="password">Title</label>
-              <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange}/>
+              <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange} />
               <label htmlFor="password">Description</label>
-              <input type="text" name="description" value={this.state.descriptionState} onChange={handleDesInputChange}/>
+              <input type="text" name="description" value={this.state.descriptionState} onChange={handleDesInputChange} />
               <button type="submit" className="btn btn-primary">submit</button>
+              {checkForEvent() ? <button type="submit" className="btn btn-primary">submit event</button> : console.log("not in event")}
             </form>
             <br />
             {this.state.previewSource && (
@@ -128,5 +152,5 @@ export default class Profile extends Component {
         </div>
       )
     }
-  } 
+  }
 }
