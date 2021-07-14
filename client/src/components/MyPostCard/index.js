@@ -2,13 +2,15 @@ import React from "react";
 import './style.css'
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import axios from "axios"
+import { MdClear } from "react-icons/md";
+import axios from "axios";
 
 function handleDelete(e){
-    console.log(e.target.value)
-    axios.delete(`http://localhost:3001/api/posts/${e.target.value}`)
+    axios.delete(`http://localhost:3001/api/posts/${e.currentTarget.value}`)
         .then(response => {
           console.log("Delete Success:",response);
+        }).catch(error => {
+          console.log('error',error)
         })
 }
 
@@ -24,7 +26,9 @@ function PostCard(props) {
           <Card.Text>
             {props.description}
           </Card.Text>
-          <Button value={props.id} onClick={(e) => { handleDelete(e) }}/>
+          <Button value={props.id} onClick={(e) => { handleDelete(e) }}>
+              <MdClear/>
+          </Button>
           {/* can add button or like tab here */}
         </Card.Body>
       </Card>

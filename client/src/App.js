@@ -22,7 +22,7 @@ export default class App extends Component {
     
         this.state = {
           loggedInStatus: "NOT_LOGGED_IN",
-          user: {}
+          user: {},
         };
     
         this.handleLogin = this.handleLogin.bind(this);
@@ -56,7 +56,7 @@ export default class App extends Component {
             console.log("check login error", error);
           });
       }
-    
+      
       componentDidMount() {
         this.checkLoginStatus();
       }
@@ -87,7 +87,7 @@ export default class App extends Component {
                         {/* <Nav /> */}
                         <Switch>
                             <Route exact path='/' render = {props => (<Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
-                            <Route exact path='/profile' render = {props => (<Profile {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>)} />
+                            <Route exact path='/profile' render = {props => (<Profile {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>)}/>
                             <Route exact path='/userphotos' render = {props => (<UserPhotos {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>)} />
                             <Route exact path='/maps' component={Map} />
                             <Route exact path='/login' render = {props => (<Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
