@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+
 import './style.css'
 
 const AnyReactComponent = ({ text, marker }) => <div className="markerDiv">{marker}<img src="./images/star.png" alt="staricon"/>{text}</div>;
@@ -13,6 +14,8 @@ class MapComponent extends Component {
     zoom: 13
   };
 
+  
+
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -21,7 +24,7 @@ class MapComponent extends Component {
         </div>
         <div style={{ height: '76vh', width: '100%' }}>
             <GoogleMapReact
-            bootstrapURLKeys={{ key: `AIzaSyCUXkG-5a5cdEyPP2Ki6sg-0Ckc9qz06W8` }}
+            bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API }}
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
             >
