@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import axios from "axios";
 // import posts from '../postdata';
-import PostCard from "../components/PostCard";
+import MyPostCard from "../components/MyPostCard";
 
 import './style.css'
 
@@ -45,12 +45,11 @@ export default class UserPhotos extends Component {
 
   render() {
     if (this.props.loggedInStatus === "LOGGED_IN") {
-
       return (
         <div>
           <div className='profileCard'>
           {this.state.posts.map((post) => {
-              return <PostCard title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} />
+              return <MyPostCard title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id}/>
             })}
           </div>
         </div>

@@ -40,8 +40,11 @@ export default class Profile extends Component {
   render() {
     if (this.props.loggedInStatus === "LOGGED_IN") {
 
-      const handleFileInputChange = (e) => {
+      const handleFileInputChange = async (e) => {
         const file = e.target.files[0]
+        // this.setState({
+        //   fileInputState: file.name
+        // })
         previewFile(file)
       }
 
@@ -95,6 +98,8 @@ export default class Profile extends Component {
         }
       }
 
+      console.log(this.state)
+      
       return (
         <div>
           <div className='imageSubmit'>
@@ -102,7 +107,7 @@ export default class Profile extends Component {
             <h2>Status: {this.props.loggedInStatus}</h2>
 
             <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
-              <input type="file" name="image" value={this.state.fileInputState} onChange={handleFileInputChange} />
+              <input type="file" name="image" onChange={handleFileInputChange}/>
               <label htmlFor="password">Title</label>
               <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange}/>
               <label htmlFor="password">Description</label>
