@@ -52,6 +52,9 @@ export default class Profile extends Component {
 
   render() {
     if (this.props.loggedInStatus === "LOGGED_IN") {
+      const state = {
+        button: 1
+      };
 
       const handleFileInputChange = async (e) => {
         const file = e.target.files[0]
@@ -84,7 +87,35 @@ export default class Profile extends Component {
       const handleSubmitFile = (e) => {
         e.preventDefault();
         if (!this.state.previewSource) return;
-        uploadImage(this.state.previewSource);
+        if (state.button === 1) {
+          console.log(state.button )
+          uploadImage(this.state.previewSource);
+        } else if (state.button === 2){
+          console.log(state.button )
+          uploadEventImage(this.state.previewSource)
+        }
+      }
+
+      const uploadEventImage = async (base64EncodedImage) => {
+        // console.log(base64EncodedImage)
+        // console.log(JSON.stringify({ Image64: base64EncodedImage }))
+        try {
+          await axios.post('http://localhost:3001/api/events',
+            {
+              userId: this.state.user_ID,
+              userName: this.state.username,
+              title: this.state.titleInputState,
+              description: this.state.descriptionState,
+              Image64: base64EncodedImage,
+              likes: 0,
+            },
+            { withCredentials: true })
+            .then(response => {
+              console.log("upload event image")
+            })
+        } catch (error) {
+          console.log("error", error)
+        }
       }
 
       const uploadImage = async (base64EncodedImage) => {
@@ -115,7 +146,7 @@ export default class Profile extends Component {
         } else {
           const distance = Math.sqrt((this.state.latitude - 47.6205063) ** 2 + (this.state.longitude - 122.3514661) ** 2)
           console.log(distance)
-          if (distance < 150) {
+          if (distance < 300) {
             return true
           } else {
             return false
@@ -135,8 +166,8 @@ export default class Profile extends Component {
               <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange} />
               <label htmlFor="password">Description</label>
               <input type="text" name="description" value={this.state.descriptionState} onChange={handleDesInputChange} />
-              <button type="submit" className="btn btn-primary">submit</button>
-              {checkForEvent() ? <button type="submit" className="btn btn-primary">submit event</button> : console.log("not in event")}
+              <button type="submit" className="btn btn-primary" onClick={() => (state.button = 1)}>submit</button>
+              {checkForEvent() ? <button type="submit" className="btn btn-primary" onClick={() => (state.button = 2)}>submit event</button> : console.log("not in event")}
             </form>
             <br />
             {this.state.previewSource && (
