@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 // import posts from '../postdata';
 import MyPostCard from "../components/MyPostCard";
-
+import MyEventPostCard from "../components/MyEventPostCard";
 import './style.css'
 
 export default class UserPhotos extends Component {
@@ -16,7 +16,8 @@ export default class UserPhotos extends Component {
       fileInputState: "",
       previewSource: "",
       selectedFile: "",
-      posts: []
+      posts: [],
+      events: [],
     }
   }
 
@@ -32,6 +33,10 @@ export default class UserPhotos extends Component {
         .then(response => {
           this.setState({ posts: response.data })
         })
+        axios.get(`http://localhost:3001/api/events/photos/${response.data.user._id}`)
+        .then(response => {
+          this.setState({ events: response.data })
+        })
       })
       .catch(error => {
         console.log("check login error", error);
@@ -46,6 +51,13 @@ export default class UserPhotos extends Component {
     if (this.props.loggedInStatus === "LOGGED_IN") {
       return (
         <div>
+          <h1>My Events:</h1>
+          <div className='profileCard'>
+          {this.state.events.map((post) => {
+              return <MyEventPostCard title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id}/>
+            })}
+          </div>
+          <h1>My Posts:</h1>
           <div className='profileCard'>
           {this.state.posts.map((post) => {
               return <MyPostCard title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id}/>
