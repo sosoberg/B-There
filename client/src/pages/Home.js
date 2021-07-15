@@ -1,14 +1,15 @@
-import React , {Component}from "react";
+import React , {Component} from "react";
 import PostCard from "../components/PostCard";
-// import posts from '../postdata';
+
 import axios from 'axios';
 import './style.css';
+
+import EventModal from "../components/EventModal";
 
 export default class Home extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props){
     super(props);
-
     this.state = {
       posts: []
     }
@@ -28,12 +29,6 @@ export default class Home extends Component {
   }
 
   render() {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-
-    today = mm + '/' + dd + '/' + yyyy;
 
     return (
       <>
@@ -47,17 +42,8 @@ export default class Home extends Component {
               </div>
           </section>
           <aside className="eventAside">
-              <h2>Events</h2>
-                <p>
-                  words words words words words
-                  words words words words words
-                  words words words words words
-                  words words words words words
-                  words words words words words
-                </p>
-                <div className="eventDiv">
-                    <p>{today}</p>
-                </div>
+                <EventModal 
+                />
           </aside>
         </div>
     </>
