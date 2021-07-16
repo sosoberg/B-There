@@ -27,6 +27,12 @@ const UserSchema = new userSchema({
         type: String,
         allowNull: false,
       },
+
+      points: {
+        type: String,
+        allowNull: false,
+      },
+
     });
 
 UserSchema.methods = {

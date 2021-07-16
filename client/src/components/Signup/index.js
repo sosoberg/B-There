@@ -34,7 +34,7 @@ export default class SignupForm extends Component {
             username: username,
             email: email,
             password: password,
-          
+            points: "0",
         },
         { withCredentials: true }
       )
