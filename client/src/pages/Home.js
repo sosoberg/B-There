@@ -92,7 +92,7 @@ export default class Home extends Component {
     return (
       <>
         <div className='homeGrid'>
-          <section>
+          <section className="totalPosts">
           <h1>Event Cards:</h1>
               <div className='top-posts'>
                 {this.state.events.map((post)=>{

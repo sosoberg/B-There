@@ -27,8 +27,10 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 630px) {
     .navDiv {
-        width: 100%;
+        top: 50px;
+        margin-right: 20px;
+        border: none;
     }
 }
