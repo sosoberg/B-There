@@ -1,0 +1,56 @@
+.dotw {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.eventTitle {
+    font-size: 30px;
+    margin: 20px;
+    border-bottom: 2px solid black;
+}
+
+.eventDescription {
+    font-size: 17.5px;
+    margin-left: 30px;
+}
+
+.funFactHeader {
+    font-size: 23px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.funFact {
+    font-size: 17.5px;
+    margin-left: 30px;
+}
+
+.checkout {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+}
+
+.futureEventsButtonDiv {
+    text-align: center;
+}
+
+.futureEventsButton {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 30px;
+}
+
+.futureEventsButton:hover {
+    color: white;
+}

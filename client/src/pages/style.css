@@ -64,13 +64,13 @@ iframe {
 } */
 
 .eventAside {
-    background-color: lightblue;
+    background-color: rgba(99, 125, 129, 0.8);
     position: fixed;
-    right: 4vw;
-    width: 30%;
-    height: 60%;
-    text-align: center;
-    border: solid 5px darkblue;
+    right: 0vw;
+    width: 350px;
+    height: 100%;
+    border-left: 4px solid black;
+    border-top: 4px solid black;
 }
 
 @media only screen and (max-width: 1620px) {
@@ -82,15 +82,6 @@ iframe {
 @media only screen and (max-width: 1550px) {
     .top-posts {
         grid-template-columns: 1fr 1fr;
-    }
-    .eventAside {
-        width: 45%;
-    }
-}
-
-@media only screen and (max-width: 1350px) {
-    .eventAside {
-        width: 40%;
     }
 }
 
@@ -104,9 +95,6 @@ iframe {
     .top-posts {
         grid-template-columns: 1fr;
     }
-    .eventAside {
-        width: 55%;
-    }
 }
 
 @media only screen and (max-width: 980px) {
@@ -118,12 +106,6 @@ iframe {
 @media only screen and (max-width: 950px) {
     .homeGrid {
         grid-template-columns: 1fr;
-    }
-    .eventAside {
-        width: 100%;
-        height: 40%;
-        right: 0vw;
-        top: 255px;
     }
     .top-posts {
         margin-top: 320px;
