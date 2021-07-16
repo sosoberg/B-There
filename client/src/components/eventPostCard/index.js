@@ -3,19 +3,6 @@ import './style.css'
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { MdThumbUp } from "react-icons/md";
-import axios from 'axios';
-
-function handlelike(e){
-  axios.get(`http://localhost:3001/api/events/${e.currentTarget.value}`)
-      .then(response => {
-        const currentLikes = response.data.likes
-        axios.put(`http://localhost:3001/api/events/${response.data._id}`,{
-          likes: currentLikes + 1
-        },{withCredentials: true})
-      }).catch(error => {
-        console.log('likes error:', error)
-      })
-}
 
 function EventCards(props) {
 
@@ -28,7 +15,7 @@ function EventCards(props) {
           <Card.Text>
             {props.description}
           </Card.Text>
-          <Button value={props.id} onClick={(e) => { handlelike(e) }}>
+          <Button value={props.id} onClick={(e) => { props.action(e.currentTarget.value) }}>
           <MdThumbUp/>
           </Button>
           <Card.Text>

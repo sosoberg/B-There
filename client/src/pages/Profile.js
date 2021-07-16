@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import EventLocation from '../events.json'
 import axios from "axios";
 
 import './style.css'
@@ -11,6 +11,7 @@ export default class Profile extends Component {
     this.state = {
       username: "",
       user_ID: "",
+      points:"",
       fileInputState: "",
       titleInputState: "",
       descriptionState: "",
@@ -18,6 +19,8 @@ export default class Profile extends Component {
       selectedFile: "",
       latitude: "",
       longitude: "",
+      eventlatitude:"",
+      eventlongitude:"",
     }
   }
 
@@ -28,11 +31,21 @@ export default class Profile extends Component {
         this.setState({
           user_ID: response.data.user._id,
           username: response.data.user.username,
+          points: response.data.user.points,
         })
       })
       .catch(error => {
         console.log("check login error", error);
       });
+  }
+
+  getEventLocation(){
+    var d = new Date();
+    var n = d.getDay() - 1;
+    this.setState({
+      eventlatitude: EventLocation[n].lat,
+      eventlongitude: EventLocation[n].lon,
+    })
   }
 
   componentDidMount() {
@@ -48,6 +61,7 @@ export default class Profile extends Component {
     } else {
       console.log("Not Avaliable")
     }
+    this.getEventLocation();
   }
 
   render() {
@@ -144,9 +158,18 @@ export default class Profile extends Component {
         if (this.state.latitude === "" && this.state.longitude === "") {
           return false
         } else {
-          const distance = Math.sqrt((this.state.latitude - 47.6205063) ** 2 + (this.state.longitude - 122.3514661) ** 2)
-          console.log(distance)
-          if (distance < 300) {
+          const R = 6371e3;
+          const φ1 = this.state.latitude * Math.PI/180;
+          const φ2 = this.state.eventlatitude * Math.PI/180;
+          const Δφ = (this.state.eventlatitude-this.state.latitude) * Math.PI/180;
+          const Δλ = (this.state.eventlongitude-this.state.longitude) * Math.PI/180;
+          const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                    Math.cos(φ1) * Math.cos(φ2) *
+                    Math.sin(Δλ/2) * Math.sin(Δλ/2);
+          const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+          const d = R * c *  0.00062137; // distance between user location and event location
+          // 5 miles, range of event
+          if (d < 5) {
             return true
           } else {
             return false
@@ -159,6 +182,7 @@ export default class Profile extends Component {
           <div className='imageSubmit'>
             <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
             <h2>Status: {this.props.loggedInStatus}</h2>
+            <h3>Points: {this.state.points}</h3>
             {console.log(this.state)}
             <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
               <input type="file" name="image" onChange={handleFileInputChange} />
