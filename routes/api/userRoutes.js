@@ -1,6 +1,12 @@
 const router = require('express').Router();
 const {User} = require('../../models');
 const passport = require("passport");
+const userController = require("../../controllers/userController");
+
+router
+  .route("/points/:id")
+  .get(userController.findById)
+  .put(userController.update)
 
 router.get('/', async(req, res) => {
   try {
@@ -10,7 +16,7 @@ router.get('/', async(req, res) => {
     res.status(500).json(err);
   }
 });
-
+  
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);

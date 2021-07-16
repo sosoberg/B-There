@@ -43,7 +43,6 @@ export default class Home extends Component {
       .catch(error => {
         console.log('likes error:', error)
       })
-    // console.log(this.state.posts[0].setState)
   }
 
   handleClickEvent(value){
