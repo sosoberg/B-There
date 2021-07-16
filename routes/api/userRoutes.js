@@ -4,7 +4,8 @@ const passport = require("passport");
 const userController = require("../../controllers/userController");
 
 router
-  .route("/:id")
+  .route("/points/:id")
+  .get(userController.findById)
   .put(userController.update)
 
 router.get('/', async(req, res) => {
