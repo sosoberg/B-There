@@ -103,8 +103,18 @@ export default class Profile extends Component {
         if (!this.state.previewSource) return;
         if (state.button === 1) {
           uploadImage(this.state.previewSource);
+          this.setState({
+            titleInputState: "",
+            descriptionState: "",
+            previewSource: "",
+          })
         } else if (state.button === 2){
           uploadEventImage(this.state.previewSource)
+          this.setState({
+            titleInputState: "",
+            descriptionState: "",
+            previewSource: "",
+          })
         }
       }
 

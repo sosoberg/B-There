@@ -79,13 +79,13 @@ export default class UserPhotos extends Component {
           <h1>My Events:</h1>
           <div className='profileCard'>
             {this.state.events.map((post) => {
-              return <MyEventPostCard action={this.handleDeleteClickEvent} title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id} />
+              return <MyEventPostCard action={this.handleDeleteClickEvent} title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id} likes={post.likes}/>
             })}
           </div>
           <h1>My Posts:</h1>
           <div className='profileCard'>
             {this.state.posts.map((post) => {
-              return <MyPostCard action={this.handleDeleteClick} title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id} />
+              return <MyPostCard action={this.handleDeleteClick} title={post.title} imgurl={post.Image64} userName={this.state.username} description={post.description} id={post._id} likes={post.likes}/>
             })}
           </div>
         </div>
