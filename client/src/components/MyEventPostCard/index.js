@@ -3,6 +3,7 @@ import './style.css'
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { MdClear } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 
 function MyEventPostCard(props) {
     return (
@@ -13,6 +14,9 @@ function MyEventPostCard(props) {
           <Card.Title><strong>{props.title}</strong></Card.Title>
           <Card.Text>
             {props.description}
+          </Card.Text>
+          <Card.Text>
+          <MdFavoriteBorder/>{props.likes}
           </Card.Text>
           <Button value={props.id} onClick={(e) => { props.action(e.currentTarget.value) }}>
               <MdClear/>
