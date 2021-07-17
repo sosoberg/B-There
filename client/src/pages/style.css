@@ -97,6 +97,12 @@ iframe {
     }
 }
 
+@media only screen and (max-width: 993px) {
+    .homeGrid {
+        padding-top: 27px;
+    }
+}
+
 @media only screen and (max-width: 980px) {
     .profileCard {
         grid-template-columns: 1fr 1fr;
@@ -107,10 +113,6 @@ iframe {
     .homeGrid {
         grid-template-columns: 1fr;
     }
-    .top-posts {
-        margin-top: 320px;
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 @media only screen and (max-width: 660px) {
@@ -118,6 +120,20 @@ iframe {
         grid-template-columns: 1fr;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .eventAside {
+        width: 100%;
+        padding: none;
+        top: 0px;
+        border: none;
+        position: absolute;
+    }
+
+    .totalPosts {
+        margin-top: 950px;
     }
 }
 

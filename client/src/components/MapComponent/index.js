@@ -25,8 +25,6 @@ class MapComponent extends Component {
     const lon = events[n].lon
     const title = events[n].name
 
-    console.log(lat)
-
     return (
       // Important! Always set the container height explicitly
       <div id="map">
