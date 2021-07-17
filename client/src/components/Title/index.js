@@ -4,7 +4,7 @@ import './style.css';
 
 const Title = () => {
     return (
-        <div>
+        <div className='wholeTitleDiv'>
             <div className="empty">
             </div>
             <div className="titleDiv">

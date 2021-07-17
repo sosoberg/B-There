@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css'
+import { Link } from 'react-router-dom';
 
 import events from '../../events.json'
 
@@ -40,10 +41,10 @@ const EventModal = () => {
                   Check out the Maps page to find the event 
                   location, or find out more about {title} <a href={weblink}>here</a>!
                 </p>
-                <div class='futureEventsButtonDiv'>
-                  <button className='futureEventsButton'>Future Events</button>
+                <div className='futureEventsButtonDiv'>
+                  <Link className='futureEventsButton' to='/contact'>Future Events</Link>
                 </div>
-        </div>
+      </div>
   );
 };
 

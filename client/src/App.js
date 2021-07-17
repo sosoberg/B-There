@@ -8,6 +8,7 @@ import Map from "./pages/Map";
 import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
 import UserPhotos from './pages/UserPhotos'
+import FutureEvents from './pages/FutureEvents'
 
 // import API from "./utils/API";
 //components
@@ -128,15 +129,16 @@ export default class App extends Component {
                 <div className='app'>
                     <Header handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} />
                     {/* <Container> */}
-                    {/* <Nav /> */}
-                    <Switch>
-                        <Route exact path='/' render={props => (<Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
-                        <Route exact path='/profile' render={props => (<Profile {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} />)} />
-                        <Route exact path='/userphotos' render={props => (<UserPhotos {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} />)} />
-                        <Route exact path='/maps' component={Map} />
-                        <Route exact path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
-                        <Route exact path='/signup' render={props => (<SignUp {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
-                    </Switch>
+                        {/* <Nav /> */}
+                        <Switch>
+                            <Route exact path='/' render = {props => (<Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
+                            <Route exact path='/profile' render = {props => (<Profile {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>)}/>
+                            <Route exact path='/userphotos' render = {props => (<UserPhotos {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus}/>)} />
+                            <Route exact path='/maps' component={Map} />
+                            <Route exact path='/contact' component={ FutureEvents } />
+                            <Route exact path='/login' render = {props => (<Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
+                            <Route exact path='/signup' render = {props => (<SignUp {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
+                        </Switch>
                     {/* </Container> */}
                 </div>
             </Router>
