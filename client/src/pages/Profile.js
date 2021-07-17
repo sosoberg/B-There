@@ -176,8 +176,8 @@ export default class Profile extends Component {
                     Math.sin(Δλ/2) * Math.sin(Δλ/2);
           const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
           const d = R * c *  0.00062137; // distance between user location and event location
-          // 5 miles, range of event
-          if (d < 800) {
+          // 5 miles, range of event, put large number for testing
+          if (d < 5) {
             return true
           } else {
             return false
