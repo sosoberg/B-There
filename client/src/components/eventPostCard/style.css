@@ -2,5 +2,24 @@
     min-width: 300px;
     width: 300px;
     margin: 10px;
-    border: 5px solid #008CBA;
+    background-image: url('../cardbackground.jpg');
+    background-size: 400%;
+    color: white;
+    background-color: white;
+    box-shadow: 0 0 10px 5px lightcyan;
 }
+
+.cardImage {
+    border-bottom: 4px solid white;
+    min-height: 200px;
+    max-height: 400px;
+}
+
+.cardTitle {
+    font-size: 25px;
+}
+
+.cardDescription {
+    font-size: 18px;
+}
+
