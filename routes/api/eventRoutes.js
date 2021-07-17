@@ -11,6 +11,10 @@ router
   .get(eventController.findById)
   .put(eventController.update)
   .delete(eventController.remove);
+
+router
+  .route("/check/:postdate")
+  .get(eventController.findByDate)
   
 router.route("/photos/:userid")
   .get(eventController.findByUserId)
