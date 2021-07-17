@@ -189,8 +189,8 @@ export default class Profile extends Component {
         <div>
           <div className='imageSubmit'>
             <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
-            <h2>Status: {this.props.loggedInStatus}</h2>
-            <h3>Points: {this.state.points}</h3>
+            {/* <h2>Status: {this.props.loggedInStatus}</h2> */}
+            <h3>Total Points: {this.state.points}</h3>
             {console.log(this.state)}
             <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
               <input type="file" name="image" onChange={handleFileInputChange} />

@@ -92,20 +92,24 @@ export default class Home extends Component {
       <>
         <div className='homeGrid'>
           <section className="totalPosts">
-          <h1>Event Cards:</h1>
-              <div className='top-posts'>
-                {this.state.events.map((post)=>{
-                  // return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description}/>
-                  return <EventCards action={this.handleClickEvent} title={post.title} imgurl={post.Image64} userName={post.userName} description={post.description} id={post._id} likes={post.likes}/>
-                })}
-              </div>
-          <h1> Normal Posts:</h1>
-              <div className='top-posts'>
-                {this.state.posts.map((post)=>{
-                  // return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description}/>
-                  return <PostCard action={this.handleClick} title={post.title} imgurl={post.Image64} userName={post.userName} description={post.description} id={post._id} likes={post.likes}/>
-                })}
-              </div>
+            <div className='eventCardDiv'>
+              <h1>Event Cards:</h1>
+                  <div className='top-posts'>
+                    {this.state.events.map((post)=>{
+                      // return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description}/>
+                      return <EventCards action={this.handleClickEvent} title={post.title} imgurl={post.Image64} userName={post.userName} description={post.description} id={post._id} likes={post.likes}/>
+                    })}
+                  </div>
+            </div>
+            <div className='normalCardDiv'>
+              <h1> Normal Posts:</h1>
+                  <div className='top-posts'>
+                    {this.state.posts.map((post)=>{
+                      // return <PostCard imgurl={post.imgurl} userName={post.userName} description={post.description}/>
+                      return <PostCard action={this.handleClick} title={post.title} imgurl={post.Image64} userName={post.userName} description={post.description} id={post._id} likes={post.likes}/>
+                    })}
+                  </div>
+            </div>
           </section>
           <aside className="eventAside">
                 <EventModal 

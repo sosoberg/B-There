@@ -30,7 +30,8 @@
     padding: 10px 0;
     color: #fff;
     z-index: 1;
-    background-image: url('./street3.jpg');
+    background-image: url('./headerBackground.jpg');
+    background-size: 114%;
 }
 
 .headH1 {

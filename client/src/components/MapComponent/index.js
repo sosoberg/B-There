@@ -30,7 +30,7 @@ class MapComponent extends Component {
       <div id="map">
         <div style={{ height: '76vh', width: '100%' }}>
             <GoogleMapReact
-            bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API }}
+            bootstrapURLKeys={{ key: "AIzaSyCUXkG-5a5cdEyPP2Ki6sg-0Ckc9qz06W8" }}
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
             >

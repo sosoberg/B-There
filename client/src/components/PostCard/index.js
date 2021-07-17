@@ -7,11 +7,13 @@ import { MdThumbUp } from "react-icons/md";
 function PostCard(props) {
     return (
         <Card className='post-card'>
-        <Card.Img variant="top" src={props.imgurl} />
+
+        <Card.Img className='cardImage' variant="top" src={props.imgurl} />
+        <Card.Title className='cardUserName' style={{fontSize:'30px', fontWeight:'bold'}}>{props.userName}</Card.Title>
         <Card.Body>
-          <Card.Title style={{fontSize:'12px'}}>{props.userName}</Card.Title>
-          <Card.Title><strong>{props.title}</strong></Card.Title>
-          <Card.Text>
+          
+          <Card.Title><strong className='cardTitle'>{props.title}</strong></Card.Title>
+          <Card.Text className='cardDescription'>
             {props.description}
           </Card.Text>
           <Button value={props.id} onClick={(e) => { props.action(e.currentTarget.value) }}>
