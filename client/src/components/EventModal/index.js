@@ -2,7 +2,7 @@ import React from "react";
 import './style.css'
 import { Link } from 'react-router-dom';
 
-import events from '../../events.json'
+import events from '../../events'
 
 const EventModal = () => {
   

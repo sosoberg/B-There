@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EventLocation from '../events.json'
+import EventLocation from '../events'
 import axios from "axios";
 
 import './style.css'
