@@ -9,7 +9,7 @@ const postSchema = new Schema({
     description: { type: String, required: true},
     Image64: { type: String, required: true },
     likes: {type: Number},
-    date: { type: Date, default: Date.now },
+    postdate: { type: String},
     // event: Boolean
 });
 

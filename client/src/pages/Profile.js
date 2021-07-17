@@ -102,10 +102,8 @@ export default class Profile extends Component {
         e.preventDefault();
         if (!this.state.previewSource) return;
         if (state.button === 1) {
-          console.log(state.button )
           uploadImage(this.state.previewSource);
         } else if (state.button === 2){
-          console.log(state.button )
           uploadEventImage(this.state.previewSource)
         }
       }
@@ -113,6 +111,11 @@ export default class Profile extends Component {
       const uploadEventImage = async (base64EncodedImage) => {
         // console.log(base64EncodedImage)
         // console.log(JSON.stringify({ Image64: base64EncodedImage }))
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, 0);
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = String(today.getFullYear());
+        var nowtoday = mm + dd + yyyy;
         try {
           await axios.post('http://localhost:3001/api/events',
             {
@@ -122,6 +125,7 @@ export default class Profile extends Component {
               description: this.state.descriptionState,
               Image64: base64EncodedImage,
               likes: 0,
+              postdate: nowtoday,
             },
             { withCredentials: true })
             .then(response => {
@@ -133,8 +137,11 @@ export default class Profile extends Component {
       }
 
       const uploadImage = async (base64EncodedImage) => {
-        // console.log(base64EncodedImage)
-        // console.log(JSON.stringify({ Image64: base64EncodedImage }))
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, 0);
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = String(today.getFullYear());
+        var nowtoday = mm + dd + yyyy;
         try {
           await axios.post('http://localhost:3001/api/posts',
             {
@@ -144,6 +151,7 @@ export default class Profile extends Component {
               description: this.state.descriptionState,
               Image64: base64EncodedImage,
               likes: 0,
+              postdate: nowtoday,
             },
             { withCredentials: true })
             .then(response => {
@@ -169,7 +177,7 @@ export default class Profile extends Component {
           const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
           const d = R * c *  0.00062137; // distance between user location and event location
           // 5 miles, range of event
-          if (d < 5) {
+          if (d < 800) {
             return true
           } else {
             return false
