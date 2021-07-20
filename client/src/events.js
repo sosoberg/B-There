@@ -1,4 +1,4 @@
-[
+const events= [
     {
         "id": 1, 
         "name": "Pike Place Market",
@@ -63,3 +63,4 @@
         "lon": "-122.3038"
     }
 ]
+export default events;
