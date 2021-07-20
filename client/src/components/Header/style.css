@@ -3,13 +3,11 @@
     position: fixed;
     top: 200px;
     z-index: 2;
-    background-color: rgba(99, 125, 129, 0.5);
-}
-
-.link:hover {
+    background-color: rgba(199, 242, 255, 0.8);
     color: white;
+    backdrop-filter: blur(10px);
+    border-bottom: 4px solid lightcyan;
 }
-
 .menu {
     display: none;
 }

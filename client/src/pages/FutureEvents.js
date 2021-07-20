@@ -14,6 +14,7 @@ class FutureEvents extends Component {
     }
 
     render () {
+
        
         return (
             <div>
@@ -56,21 +57,3 @@ class FutureEvents extends Component {
 };
 
 export default FutureEvents;
-
-// {this.state.events.map(event => (
-//     <>
-//         <p className='dotw'>{dotw}'s Event!</p>
-//         <h2 className='eventTitle'>{title}</h2>
-//             <p className='eventDescription'>
-//             {description}
-//             </p>
-//         <h3 className='funFactHeader'>FunFact:</h3>
-//             <p className='funFact'>
-//                 {funfact}
-//             </p>
-//             <p className='checkout'>
-//                 Check out the Maps page to find the event 
-//                 location, or find out more about {title} <a href={weblink}>here</a>!
-//             </p>
-//     </>
-// ))}
