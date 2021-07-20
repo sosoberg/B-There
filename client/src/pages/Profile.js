@@ -198,23 +198,34 @@ export default class Profile extends Component {
       return (
         <div>
           <div className='imageSubmit'>
-            <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
-            {/* <h2>Status: {this.props.loggedInStatus}</h2> */}
-            <h3>Total Points: {this.state.points}</h3>
-            {console.log(this.state)}
-            <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
-              <input type="file" name="image" onChange={handleFileInputChange} />
-              <label htmlFor="password">Title</label>
-              <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange} />
-              <label htmlFor="password">Description</label>
-              <input type="text" name="description" value={this.state.descriptionState} onChange={handleDesInputChange} />
-              <button type="submit" className="btn btn-primary" onClick={() => (state.button = 1)}>submit</button>
-              {checkForEvent() ? <button type="submit" className="btn btn-primary" onClick={() => (state.button = 2)}>submit event</button> : console.log("not in event")}
-            </form>
-            <br />
-            {this.state.previewSource && (
-              <img src={this.state.previewSource} alt="chose" style={{ height: '300px' }} />
-            )}
+          <h1 className='stateUserName'>Welcome: {this.state.username}</h1>
+            <div className='imageSubmitGrid'>
+              <div>
+                {/* <h2>Status: {this.props.loggedInStatus}</h2> */}
+                {console.log(this.state)}
+                <form className='pictureSubmitForm' onSubmit={handleSubmitFile}>
+                  <input type="file" name="image" onChange={handleFileInputChange} />
+                  <label className='labels' htmlFor="password">Title</label>
+                  <input type="text" name="title" value={this.state.titleInputState} onChange={handleTitleInputChange} />
+                  <label className='labels' htmlFor="password">Description</label>
+                  <input type="text" name="description" value={this.state.descriptionState} onChange={handleDesInputChange} />
+                  <div className='buttonGrid'>
+                    <button type="submit" className="btn btn-primary" onClick={() => (state.button = 1)}>Submit</button>
+                    {checkForEvent() ? <button type="submit" className="btn btn-primary" onClick={() => (state.button = 2)}>Submit Event</button> : console.log("not in event")}
+                  </div>
+                  </form>
+                <div className='pointsTotal'>
+                  <h3>Total Points</h3>
+                  <p className='points'>{this.state.points}</p>
+                </div>
+                <br />
+              </div>
+              <div>
+              {this.state.previewSource && (
+                <img className='imagePreview' src={this.state.previewSource} alt="chose" style={{ height: '250px' }} />
+              )}
+              </div>
+            </div>
           </div>
         </div>
       );
