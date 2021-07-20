@@ -4,15 +4,19 @@
     }
     45% {
         transform: rotateY(0deg);
+        color: black;
     }
     50% {
         transform: rotateY(180deg);
+        color: rgb(177, 78, 78);
     }
     95% {
         transform: rotateY(180deg);
+        color: rgb(177, 78, 78);
     }
     to {
         transform: rotateY(0deg);
+        color: black;
     }
 }
 
@@ -39,7 +43,7 @@
     animation: rotate;
     animation-duration: 60s;
     animation-iteration-count: infinite;
-
+    color: black;
 }
 
 .B {
@@ -55,7 +59,7 @@
     }
 }
 
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 750px) {
     .wholeTitleDiv {
         display: none;
     }
