@@ -18,12 +18,22 @@ class FutureEvents extends Component {
 
         today = mm + '/' + dd + '/' + yyyy;
 
-        var z = new Date();
-        var m = z.getDay() - 1;
-
-        console.log(m)
         var d = new Date();
         var n = d.getDay() - 1;
+
+        const test = n + 3;
+
+        console.log(test)
+
+        let test1 = 0;
+
+        
+            if (test > 6) {
+                test1 = test - 7;
+                console.log(test1)
+                console.log(days[test1])
+            }
+
 
         // dotw = day of the week
         const dotw = days[n]
@@ -70,8 +80,8 @@ class FutureEvents extends Component {
         // const weblink7 = events[n + 6].weblink
 
         return (
-            <div>
-                    <>
+            <div className='futureEventGrid'>
+                    <div className='futureEventSection'>
                         <p className='dotw'>{dotw}'s Event!</p>
                         <h2 className='eventTitle'>{title}</h2>
                             <p className='eventDescription'>
@@ -82,11 +92,10 @@ class FutureEvents extends Component {
                                 {funfact}
                             </p>
                             <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title} <a href={weblink}>here</a>!
+                                Find out more about {title} <a href={weblink}>here</a>!
                             </p>
-                    </>
-                    <>
+                    </div>
+                    <div className='futureEventSection'>
                         <p className='dotw'>{dotw2}'s Event!</p>
                         <h2 className='eventTitle'>{title2}</h2>
                             <p className='eventDescription'>
@@ -97,11 +106,10 @@ class FutureEvents extends Component {
                                 {funfact2}
                             </p>
                             <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title2} <a href={weblink2}>here</a>!
+                                Find out more about {title2} <a href={weblink2}>here</a>!
                             </p>
-                    </>
-                    <>
+                    </div>
+                    <div className='futureEventSection'>
                         <p className='dotw'>{dotw}'s Event!</p>
                         <h2 className='eventTitle'>{title}</h2>
                             <p className='eventDescription'>
@@ -112,11 +120,10 @@ class FutureEvents extends Component {
                                 {funfact}
                             </p>
                             <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title} <a href={weblink}>here</a>!
+                                Find out more about {title} <a href={weblink}>here</a>!
                             </p>
-                    </>
-                    <>
+                    </div>
+                    <div className='futureEventSection'>
                         <p className='dotw'>{dotw}'s Event!</p>
                         <h2 className='eventTitle'>{title}</h2>
                             <p className='eventDescription'>
@@ -127,11 +134,10 @@ class FutureEvents extends Component {
                                 {funfact}
                             </p>
                             <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title} <a href={weblink}>here</a>!
+                                Find out more about {title} <a href={weblink}>here</a>!
                             </p>
-                    </>
-                    <>
+                    </div>
+                    <div className='futureEventSection'>
                         <p className='dotw'>{dotw}'s Event!</p>
                         <h2 className='eventTitle'>{title}</h2>
                             <p className='eventDescription'>
@@ -142,11 +148,10 @@ class FutureEvents extends Component {
                                 {funfact}
                             </p>
                             <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title} <a href={weblink}>here</a>!
+                                Find out more about {title} <a href={weblink}>here</a>!
                             </p>
-                    </>
-                    <>
+                    </div>
+                    <div className='futureEventSection'>
                         <p className='dotw'>{dotw}'s Event!</p>
                         <h2 className='eventTitle'>{title}</h2>
                             <p className='eventDescription'>
@@ -157,46 +162,12 @@ class FutureEvents extends Component {
                                 {funfact}
                             </p>
                             <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title} <a href={weblink}>here</a>!
+                                Find out more about {title} <a href={weblink}>here</a>!
                             </p>
-                    </>
-                    <>
-                        <p className='dotw'>{dotw}'s Event!</p>
-                        <h2 className='eventTitle'>{title}</h2>
-                            <p className='eventDescription'>
-                            {description}
-                            </p>
-                        <h3 className='funFactHeader'>FunFact:</h3>
-                            <p className='funFact'>
-                                {funfact}
-                            </p>
-                            <p className='checkout'>
-                                Check out the Maps page to find the event 
-                                location, or find out more about {title} <a href={weblink}>here</a>!
-                            </p>
-                    </>
+                    </div>
             </div>
             );
     }
 };
 
 export default FutureEvents;
-
-// {this.state.events.map(event => (
-//     <>
-//         <p className='dotw'>{dotw}'s Event!</p>
-//         <h2 className='eventTitle'>{title}</h2>
-//             <p className='eventDescription'>
-//             {description}
-//             </p>
-//         <h3 className='funFactHeader'>FunFact:</h3>
-//             <p className='funFact'>
-//                 {funfact}
-//             </p>
-//             <p className='checkout'>
-//                 Check out the Maps page to find the event 
-//                 location, or find out more about {title} <a href={weblink}>here</a>!
-//             </p>
-//     </>
-// ))}
